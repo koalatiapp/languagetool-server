@@ -15,7 +15,7 @@ ENV langtool_word2vecModel=/home/languagetool/word2vec
 # Copy ngrams & word2vec download script, and make it run in the background
 # The goal is to prevent huge build times
 COPY --chown=languagetool install_additionals.sh install_additionals.sh
-RUN eval "bash ${WORKDIR}/install_additionals" &>/dev/null & disown;
+RUN eval "bash ${WORKDIR}/install_additionals" &>/dev/null &
 
 # Reset workdir to its default value
 WORKDIR /LanguageTool

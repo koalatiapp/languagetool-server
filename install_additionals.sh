@@ -4,7 +4,6 @@
 
 # Download and unzip ngrams
 # More information available here: https://dev.languagetool.org/finding-errors-using-n-gram-data
-mkdir $WORKDIR/ngrams
 wget -P $WORKDIR/ https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip && unzip $WORKDIR/ngrams-en-20150817.zip -d $WORKDIR/ngrams && rm $WORKDIR/ngrams-en-20150817.zip
 wget -P $WORKDIR/ https://languagetool.org/download/ngram-data/ngrams-es-20150915.zip && unzip $WORKDIR/ngrams-es-20150915.zip -d $WORKDIR/ngrams && rm $WORKDIR/ngrams-es-20150915.zip
 wget -P $WORKDIR/ https://languagetool.org/download/ngram-data/ngrams-fr-20150913.zip && unzip $WORKDIR/ngrams-fr-20150913.zip -d $WORKDIR/ngrams && rm $WORKDIR/ngrams-fr-20150913.zip

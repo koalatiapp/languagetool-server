@@ -1,5 +1,7 @@
 FROM erikvl87/languagetool
 
+WORKDIR /home/languagetool
+
 # Java heap size
 ENV Java_Xms=512m
 ENV Java_Xmx=1g
@@ -11,12 +13,12 @@ ENV langtool_word2vecModel=/home/languagetool/word2vec
 
 # Download and unzip ngrams
 # More information available here: https://dev.languagetool.org/finding-errors-using-n-gram-data
-RUN mkdir /home/languagetool/ngrams
-RUN wget https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip && unzip ngrams-en-20150817.zip -d /home/languagetool/ngrams && rm ngrams-en-20150817.zip
-RUN wget https://languagetool.org/download/ngram-data/ngrams-es-20150915.zip && unzip ngrams-es-20150915.zip -d /home/languagetool/ngrams && rm ngrams-es-20150915.zip
-RUN wget https://languagetool.org/download/ngram-data/ngrams-fr-20150913.zip && unzip ngrams-fr-20150913.zip -d /home/languagetool/ngrams && rm ngrams-fr-20150913.zip
-RUN wget https://languagetool.org/download/ngram-data/ngrams-nl-20181229.zip && unzip ngrams-nl-20181229.zip -d /home/languagetool/ngrams && rm ngrams-nl-20181229.zip
-RUN wget https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip && unzip ngrams-de-20150819.zip -d /home/languagetool/ngrams && rm ngrams-de-20150819.zip
+RUN mkdir /home/languagetool/ngrams && \
+    wget https://languagetool.org/download/ngram-data/ngrams-en-20150817.zip && unzip ngrams-en-20150817.zip -d /home/languagetool/ngrams && rm ngrams-en-20150817.zip && \
+    wget https://languagetool.org/download/ngram-data/ngrams-es-20150915.zip && unzip ngrams-es-20150915.zip -d /home/languagetool/ngrams && rm ngrams-es-20150915.zip && \
+    wget https://languagetool.org/download/ngram-data/ngrams-fr-20150913.zip && unzip ngrams-fr-20150913.zip -d /home/languagetool/ngrams && rm ngrams-fr-20150913.zip && \
+    wget https://languagetool.org/download/ngram-data/ngrams-nl-20181229.zip && unzip ngrams-nl-20181229.zip -d /home/languagetool/ngrams && rm ngrams-nl-20181229.zip && \
+    wget https://languagetool.org/download/ngram-data/ngrams-de-20150819.zip && unzip ngrams-de-20150819.zip -d /home/languagetool/ngrams && rm ngrams-de-20150819.zip
 
 # Download and ungzip word2vec neural network models
 # More information available here: https://github.com/languagetool-org/languagetool/blob/master/languagetool-standalone/CHANGES.md#word2vec

@@ -6,6 +6,3 @@ ENV Java_Xmx=1g
 
 # LT Server configruations
 ENV langtool_pipelinePrewarming=true
-
-# LT Server configurations
-ENV langtool_warmUp=true

@@ -7,7 +7,6 @@ ENV Java_Xms=512m
 ENV Java_Xmx=1g
 
 # LT Server configurations
-ENV langtool_pipelinePrewarming=true
 ENV langtool_languageModel=/home/languagetool/ngrams
 ENV langtool_word2vecModel=/home/languagetool/word2vec
 
